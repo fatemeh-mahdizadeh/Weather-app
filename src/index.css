@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+  background-image: 
+  url(../public/assets/images/bg.jpg);
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+
+}
+.bg-color{
+  background: rgb(7,5,40);
+  background: linear-gradient(344deg, rgba(7,5,40,1) 0%, rgba(121,81,168,1) 79%, rgba(122,75,181,1) 83%);
+  
+
+  
+}
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+  
+}
