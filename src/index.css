@@ -1,23 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.bg {
-  background-image: 
-  url(../public/assets/images/bg.jpg);
+@media only screen and (min-width: 640px) {
+  .bg {
+    background-image: 
+    url(/assets/images/bg.jpg);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
   
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  
-
+  }
 }
+
 .bg-color{
-  background: rgb(7,5,40);
-  background: linear-gradient(344deg, rgba(7,5,40,1) 0%, rgba(121,81,168,1) 79%, rgba(122,75,181,1) 83%);
+  background: rgb(2,0,36);
+  background: linear-gradient(340deg, rgba(2,0,36,1) 0%, rgba(95,19,148,1) 50%, rgba(91,87,233,1) 100%);
   
 
-  
 }
 *{
   box-sizing: border-box;
