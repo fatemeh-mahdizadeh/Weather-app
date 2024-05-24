@@ -1,13 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import Navbar from './components/Header/Navbar'
-
 import Home from './pages/Home'
 import Map from './pages/Map'
 import ContactUs from './pages/ContactUs'
 import About from './pages/About'
-
-
-
 
 function App() {
 

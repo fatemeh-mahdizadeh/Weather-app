@@ -5,13 +5,16 @@ export const navbar=[
     {route:'/contactus', label:'ContactUs',id:2},
     {route:'/about', label:'About',id:3}
 ];
-const url="/assets/icons/"
-export const weather=[
-    {weather:'SUN', time:'5:00',tem:"22°",tem2:'28°',img:url+"Day/few clouds.png" ,id:0},
-    {weather:'SUN', time:'6:30',tem:"20°",tem2:'25°',img:url+"Day/rain.png" ,id:1},
-    {weather:'SUN', time:'7:00',tem:"20°",tem2:'25°',img:url+"Night/few clouds.png" ,id:2},
-    {weather:'SUN', time:'8:30',tem:"19°",tem2:'25°',img:url+"Night/clear sky.png" ,id:3}
-];
+const now=new Date()
+const string=now.toDateString().split(' ')
+
+export const month=string[1]
+export const day=string[2]
+
+const daysOfWeek = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; 
+export const dayOfWeek = daysOfWeek[now.getDay()];
+export const horse=now.getHours()
+export const minutes=now.getMinutes()
 
 
 
