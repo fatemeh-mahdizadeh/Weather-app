@@ -1,5 +1,3 @@
-
-
 const Logo = () => {
   return (
     <h1 className="hidden sm:flex">

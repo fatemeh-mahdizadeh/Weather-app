@@ -5,13 +5,8 @@ import { GoArrowLeft } from "react-icons/go";
 import { useSearchParams } from 'react-router-dom'
 import { getWeather5days } from '../../services/getWeather5days';
 import { convertKelvinToCelsius, horse, icons } from '../../utils/tools';
-
-import { Virtual, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-
-
-
-// Import Swiper styles
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -23,32 +18,16 @@ const Main = () => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
-
-
     useEffect(() => {
         if (id) {
             const Data = async () => {
                 const data = await getWeather5days(id)
                 setDaysApi(data.data.list)
-
-                console.log(daysApi);
-
-
             }
             Data()
-            console.log(daysApi);
-
-
         }
 
-
     }, [id])
-
-    console.log(daysApi);
-
-
-
-
 
     if (!daysApi) {
         return <h2>no</h2>
@@ -68,19 +47,15 @@ const Main = () => {
                 </div>
             </div>
 
-
             <div className=' lg:flex px-2  mx-5  '>
-
-
                 <Swiper className='mx-auto lg:w-10/12  md:w-11/12'
-
                     modules={[Navigation, Pagination]}
 
                     breakpoints={{
                         0: {
                             spaceBetween: 10,
                             slidesPerView: 1,
-                            
+
                         },
                         468: {
                             spaceBetween: 10,
@@ -112,8 +87,6 @@ const Main = () => {
                     }}
 
                 >
-
-
                     {daysApi?.map((items, index) => (
                         <SwiperSlide key={items.index} className=" md:mx-0 flex items-center h-64 mb-10 mt-10 flex-col border-1 bg-gray-100 rounded-xl px-4 py-3 gap-4 md:w-2/12 w-9/12">
                             <img src={icons(items.weather[0].icon, items.weather[0].description)} alt="" className="sm:w-32 w-28 h-28 mx-auto" />
@@ -130,23 +103,14 @@ const Main = () => {
                         </SwiperSlide>
                     ))}
 
-
-
-
-
                 </Swiper>
-
-
-
             </div>
-
-
         </>
     )
 }
 
 export default Main
-// overcast
+
 
 
 

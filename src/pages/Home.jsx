@@ -7,44 +7,42 @@ import { useEffect } from 'react'
 import { getWeatherCityId } from '../services/getWeatherCityId'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-
-
 const Home = () => {
-const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const [cityInfo, setCityInfo] = useState()
-  const id =  searchParams.get('cityId')
+  const id = searchParams.get('cityId')
 
   useEffect(() => {
     if (id) {
       const Data = async () => {
         const data = await getWeatherCityId(id);
-        
+
         setCityInfo(data.data)
-        console.log(data.data);
+        
       }
       Data()
     }
-
-
   }, [id])
 
+
   if (!id) {
-    return <h2 className='text-center text-6xl text-red-500 mt-10'>No Result</h2>
+    return <h2 className='text-center text-6xl text-red-500 mt-10'>Enter Your City Name</h2>
   }
-
-
-
   return (
     <div>
       <div className="bg w-12/12 rounded-2xl ">
         <section className="flex flex-col sm:flex-row items-center sm:justify-between md:w-10/12 w-12/12 px-4 sm:mx-auto">
           <div className="sm:mt-20 mt-10">
-            <CityInfo name={cityInfo?.name}/>
-            <Rain  wind={cityInfo?.wind.speed}  />
+            <CityInfo name={cityInfo?.name} />
+            <Rain wind={cityInfo?.wind.speed} />
           </div>
-          <ToDay temp={cityInfo?.main.temp} tempMax={cityInfo?.main.temp_max} tempMin={cityInfo?.main.temp_max} />
-        </section >
+          {cityInfo &&(
+            <ToDay temp={cityInfo?.main.temp} tempMax={cityInfo?.main.temp_max} tempMin={cityInfo?.main.temp_max} description={cityInfo?.weather[0].description} icon={cityInfo?.weather[0].icon} />
+        
+
+          )}
+          </section >
 
       </div >
       <Main />

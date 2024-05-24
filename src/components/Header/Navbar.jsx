@@ -6,17 +6,13 @@ import { NavMobile } from "./navbarMobile";
 
 
 function Navbar() {
-
-
     return (
         <nav className="flex items-center justify-between w-12/12 h-20 text-xl px-1">
-            
             <Logo />
-            <NavMobile/>
+            <NavMobile />
             <NavbarList />
             <NavbarOption />
         </nav>
-
     );
 }
 
