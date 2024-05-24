@@ -13,8 +13,6 @@ const ToDay = ({ temp, tempMin, tempMax,description,icon }) => {
             </div>
         </>
     )
-
-
 }
 
 export default ToDay

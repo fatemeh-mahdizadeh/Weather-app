@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import SkeletWeather from '../../services/skeletWeather';
 
 const Main = () => {
     const [searchParams] = useSearchParams();
@@ -22,7 +23,9 @@ const Main = () => {
         if (id) {
             const Data = async () => {
                 const data = await getWeather5days(id)
-                setDaysApi(data.data.list)
+                setTimeout(() => {
+                    setDaysApi(data.data.list)
+                }, 3000);
             }
             Data()
         }
@@ -30,7 +33,9 @@ const Main = () => {
     }, [id])
 
     if (!daysApi) {
-        return <h2>no</h2>
+        return (
+            <SkeletWeather />
+        )
     }
 
     return (
@@ -95,11 +100,8 @@ const Main = () => {
                                 </h6>
                                 <h6 className=" sm:text-base text-sm text-white bg-purple-900 text-center rounded-lg mt-1 sm:rounded-xl px-1  ">{horse(items.dt_txt)}
                                 </h6>
-
                             </div>
                             <p className=" text-center "> <span className='text-purple-900 sm:text-3xl text-xl'>{convertKelvinToCelsius(items.main.temp_min)}°C</span>&nbsp;&nbsp;&nbsp;&nbsp; <span className='text-gray-600 text-sm sm:text-base'>{convertKelvinToCelsius(items.main.temp_min)}°C</span></p>
-
-
                         </SwiperSlide>
                     ))}
 
