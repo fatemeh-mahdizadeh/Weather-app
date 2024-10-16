@@ -8,7 +8,9 @@ import { convertKelvinToCelsius } from "../../utils/tools";
 
 
 
+
 const NavbarOption = () => {
+  
   const [cityName, setCityName] = useState('');
   const [loction, setLotion] = useState({
     city: {},

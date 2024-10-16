@@ -8,6 +8,7 @@ export default {
     fontFamily:{
       sans:'system-ui sans-serif', 
     },    
+
     extend: {
       colors: {
         'white': '#ffffff',
@@ -18,7 +19,8 @@ export default {
         'purple-900': '#3b0764', 
         'black':'#020617',           
         'purple':'#5b21b6',
-        'purple-700':'#7e22ce',         
+        'purple-700':'#7e22ce',  
+        'purple-200':"#f3e8ff"       
       },
     },
   },

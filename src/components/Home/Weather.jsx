@@ -25,7 +25,7 @@ const Main = () => {
                 const data = await getWeather5days(id)
                 setTimeout(() => {
                     setDaysApi(data.data.list)
-                }, 3000);
+                }, 1000);
             }
             Data()
         }
@@ -93,7 +93,7 @@ const Main = () => {
 
                 >
                     {daysApi?.map((items, index) => (
-                        <SwiperSlide key={items.index} className=" md:mx-0 flex items-center h-64 mb-10 mt-10 flex-col border-1 bg-gray-100 rounded-xl px-4 py-3 gap-4 md:w-2/12 w-9/12">
+                        <SwiperSlide key={index} className=" md:mx-0 flex items-center h-64 mb-10 mt-10 flex-col border-1 bg-gray-100 rounded-xl px-4 py-3 gap-4 md:w-2/12 w-9/12">
                             <img src={icons(items.weather[0].icon, items.weather[0].description)} alt="" className="sm:w-32 w-28 h-28 mx-auto" />
                             <div className='flex sm:gap-2 gap-0.5 w-12/12 justify-center '>
                                 <h6 className=" sm:text-base text-sm text-white bg-purple-900 text-center rounded-lg mt-1 sm:rounded-xl sm:px-2 px-1">{items.weather[0].main}

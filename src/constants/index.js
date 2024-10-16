@@ -1,4 +1,3 @@
-
 export const navbar=[
     {route:'/', label:'Home',id:0},
     {route:'/map', label:'Map',id:1},
