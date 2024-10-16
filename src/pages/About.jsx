@@ -3,7 +3,7 @@
 const About = () => {
   return (
     <main className="md:w-11/12 w-12/12 md:px-16 mt-4 sm:h-[650px] h-[900px] flex flex-row  mx-auto bg-purple-200 rounded-lg">
-      <div className="lg:w-10/12 12/12 flex flex-col sm:flex-row mx-auto my-10 h-[500px]">
+      <div className="lg:w-10/12 12/12 flex flex-col sm:flex-row mx-auto my-10 h-[555px]">
 
         <div className="rounded-2xl flex flex-col sm:w-6/12 w-12/12 bg-white mx-3 py-4 sm:py-0">
           <p className="text-xl sm:ml-8 ml-4 sm:mt-8 text-purple">how it started</p>
